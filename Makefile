@@ -5,11 +5,13 @@
 # 	sudo gem install wkpdf
 #
 
+HTML = sef-kloninger-resume.html
+PDF = sef-kloninger-resume.pdf
 
-sef-kloninger-resume.pdf: sef-kloninger-resume.html
-	wkpdf --source ./sef-kloninger-resume.html \
-		  --output ./sef-kloninger-resume.pdf \
-		  -m 40
+$(PDF): $(HTML)
+	wkpdf -m 40 \
+		--source ./$< \
+		--output ./$@  
 
 clean:
-	rm sef-kloninger-resume.pdf
+	[ -r $(PDF) ] && rm $(PDF)

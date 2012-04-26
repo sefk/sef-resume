@@ -15,3 +15,6 @@ $(PDF): $(HTML)
 
 clean:
 	[ -r $(PDF) ] && rm $(PDF)
+
+publish:
+	ssh -A sefklon@sef.kloninger.com 'echo "cd ~/src/sef-resume" && cd ~/src/sef-resume && echo "git pull" && git pull'

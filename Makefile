@@ -5,16 +5,30 @@
 # 	sudo gem install wkpdf
 #
 
-HTML = sef-kloninger-resume.html
-PDF = sef-kloninger-resume.pdf
+PDF-TARGETS = sef-kloninger-resume.pdf sef-kloninger-resume-full.pdf
+HTML-TARGETS = sef-kloninger-resume-full.html
 
-$(PDF): $(HTML)
+all: $(HTML-TARGETS) $(PDF-TARGETS)
+	
+%.pdf: %.html
+	#
+	# ----- Make PDF
 	wkpdf -m 40 \
 		--source ./$< \
 		--output ./$@  
 
-clean:
-	[ -r $(PDF) ] && rm $(PDF)
+%-full.html: %.html
+ifeq (z$(RESUME_ADDRESS),z)
+	# Can't generate full resume without $$RESUME_ADDRESS environment variable (for example "street<br>city<br>phone<br>")
+	exit 1
+else
+	#
+	# ----- Make With Address, using $$RESUME_ADDRESS from environment
+	cat $< | sed 's/<!-- addr -->/$(RESUME_ADDRESS)/g' > $@
+endif
+
+clean: 
+	-rm $(PDF-TARGETS) $(HTML-TARGETS)
 
 publish:
 	ssh -A sefklon@kloninger.com 'echo "cd ~/src/sef-resume" && cd ~/src/sef-resume && echo "git pull" && git pull'

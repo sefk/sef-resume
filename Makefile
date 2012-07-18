@@ -27,8 +27,12 @@ else
 	cat $< | sed 's/<!-- addr -->/$(RESUME_ADDRESS)/g' > $@
 endif
 
+thumbs:
+	for i in *.png; do convert $$i -resize 25% $${i%%.png}-thumb.png; done
+
 clean: 
 	-rm $(PDF-TARGETS) $(HTML-TARGETS)
+	-rm *-thumb.png
 
 publish:
 	ssh -A sefklon@kloninger.com 'echo "cd ~/src/sef-resume" && cd ~/src/sef-resume && echo "git pull" && git pull'

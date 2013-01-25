@@ -1,5 +1,5 @@
 My Resume in [HTML][h] and [PDF][p] formats.
 =============================
 
- [h]: ./sef-kloninger-resume.html
- [p]: ./sef-kloninger-resume.pdf
+  [h]: http://sef.kloninger.com/f/sk-resume.html
+  [p]: http://sef.kloninger.com/f/sk-resume.pdf

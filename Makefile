@@ -13,7 +13,7 @@ all: $(HTML-TARGETS) $(PDF-TARGETS)
 %.pdf: %.html
 	#
 	# ----- Make PDF
-	wkpdf -m 40 \
+	wkpdf -m 40 --stylesheet-media print \
 		--source ./$< \
 		--output ./$@  
 

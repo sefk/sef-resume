@@ -1,0 +1,20 @@
+title	    	      { font-size: large; }
+body                  { font-family: times,serif; 
+                        margin-top: 0; padding-top: 0 }
+td                    { vertical-align: top; }
+.name                 { font-size: xx-large;  font-weight: bold; 
+                        font-family: arial,sans-serif; }
+.section              { font-size: large; font-weight: bold; 
+                        font-family: arial,sans-serif; }
+.company              { font-size: large;  font-weight: bold; 
+                        font-family: arial,sans-serif; }
+.job                  { font-size: medium; font-weight: bold; 
+                        font-family: arial,sans-serif; }
+.city                 { vertical-align: bottom; }
+.continue             { margin-top: 5pt; margin-bottom: 0pt; }
+ul                    { margin-top: 2pt; margin-bottom: 0pt; }
+P.version             { font-size: 8pt; font-style: italic;
+                        text-align: right; }
+/* div.jobdesc        { text-align: justify; } */
+A:link, A:active, A:visited
+                      { color: blue; text-decoration: none }

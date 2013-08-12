@@ -14,6 +14,15 @@ Setup
     export RESUME_ADDRESS="Street<br>City/zip<br>Phone<br>"
     <ctrl-d>
 
+It seems that wkpdf doesn't play well with rvm or rbenv.  If you're
+getting a "Cocoa" problem, that might be it.  In that case:
+
+    sudo gem uninstall wkpdf
+    rm ~/.rbenv/shims/wkpdf
+    sudo /usr/bin/gem install wkpdf
+
+See this issue: <https://github.com/plessl/wkpdf/issues/36>
+
 
 Publishing
 ----------

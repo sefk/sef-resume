@@ -1,14 +1,14 @@
-title	    	      { font-size: medium; }
-body                  { font-family: times,serif; font-size: small;
+title	    	      { font-size: 100%; }
+body                  { font-family: times,serif; font-size: 75%;
                         margin-top: 0; padding-top: 0 }
 td                    { vertical-align: top; }
-.name                 { font-size: x-large;  font-weight: bold; 
+.name                 { font-size: 200%;  font-weight: bold; 
                         font-family: arial,sans-serif; }
-.section              { font-size: medium; font-weight: bold; 
+.section              { font-size: 120%; font-weight: bold; 
                         font-family: arial,sans-serif; }
-.company              { font-size: medium;  font-weight: bold; 
+.company              { font-size: 120%;  font-weight: bold; 
                         font-family: arial,sans-serif; }
-.job                  { font-size: medium; font-weight: bold; 
+.job                  { font-size: 120%; font-weight: bold; 
                         font-family: arial,sans-serif; }
 .city                 { vertical-align: bottom; }
 .continue             { margin-top: 5pt; margin-bottom: 0pt; }

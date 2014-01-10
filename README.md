@@ -5,14 +5,21 @@ My Resume in [HTML][h] and [PDF][p] formats.
   [p]: http://sef.kloninger.com/f/sk-resume.pdf
 
 
-Setup
-----
+## Setup
 
+Steps to use this repo:
+
+    # wkpdf, "webkit pdf", creates PDF's HTML
     sudo gem install wkpdf
+
+    # store my address locally, don't want public in GitHub
     cd ~/.bash_startup
     cat >>EOF > local
     export RESUME_ADDRESS="Street<br>City/zip<br>Phone<br>"
     <ctrl-d>
+
+    # imagemagick is used for thumbnails
+    brew install imagemagick
 
 It seems that wkpdf doesn't play well with rvm or rbenv.  If you're
 getting a "Cocoa" problem, that might be it.  In that case:
@@ -24,10 +31,15 @@ getting a "Cocoa" problem, that might be it.  In that case:
 See this issue: <https://github.com/plessl/wkpdf/issues/36>
 
 
-Publishing
-----------
+## Publish
 
 1. Update
 2. make
 3. git commit; git push
-4. make install
+
+Then you can use these links to serve directly from GitHub.
+<https://rawgithub.com/sefk/sef-resume/master/sef-kloninger-resume.html> and 
+<https://rawgithub.com/sefk/sef-resume/master/sef-kloninger-resume.pdf>.
+
+Simple as pie.
+

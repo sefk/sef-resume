@@ -34,5 +34,3 @@ clean:
 	-rm $(PDF-TARGETS) $(HTML-TARGETS)
 	-rm *-thumb.png
 
-publish:
-	ssh -A sefklon@kloninger.com 'echo "cd ~/src/sef-resume" && cd ~/src/sef-resume && echo "git pull" && git pull'

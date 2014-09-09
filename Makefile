@@ -1,8 +1,5 @@
-# Convert resume from HTML to PDF using a super helpful little utility.  
+# Convert resume from HTML to PDF using a super helpful little utility.
 # Only works on a Mac
-#
-# Relies on the wkpdf tool to drive webkit to render the html file.  see http://plessl.github.com/wkpdf/.  First do this:
-# 	sudo gem install wkpdf
 #
 
 PDF-TARGETS = sef-kloninger-resume.pdf sef-kloninger-resume-full.pdf
@@ -11,11 +8,8 @@ HTML-TARGETS = sef-kloninger-resume-full.html
 all: $(HTML-TARGETS) $(PDF-TARGETS)
 	
 %.pdf: %.html
-	#
-	# ----- Make PDF
-	wkpdf -m 40 --stylesheet-media print \
-		--source ./$< \
-		--output ./$@  
+#	pandoc -t latex ./$< -o ./$@
+	wkhtmltopdf --print-media-type ./$< ./$@
 
 %-full.html: %.html
 ifeq (z$(RESUME_ADDRESS),z)

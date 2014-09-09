@@ -5,6 +5,13 @@ My Resume in [HTML][h] and [PDF][p] formats.
   [p]: http://sef.kloninger.com/f/sk-resume.pdf
 
 
+## Requirements
+
+Needs a helper utility to convert the HTML to PDF: [wkhtmltopdf](http://sourceforge.net/projects/wkhtmltopdf/).  
+
+
+    
+
 ## Setup
 
 Steps to use this repo:

@@ -5,19 +5,10 @@ My Resume in [HTML][h] and [PDF][p] formats.
   [p]: http://sef.kloninger.com/f/sk-resume.pdf
 
 
-## Requirements
-
-Needs a helper utility to convert the HTML to PDF: [wkhtmltopdf](http://sourceforge.net/projects/wkhtmltopdf/).  
-
-
-    
 
 ## Setup
 
 Steps to use this repo:
-
-    # wkpdf, "webkit pdf", creates PDF's HTML
-    sudo gem install wkpdf
 
     # store my address locally, don't want public in GitHub
     cd ~/.bash_startup
@@ -28,14 +19,10 @@ Steps to use this repo:
     # imagemagick is used for thumbnails
     brew install imagemagick
 
-It seems that wkpdf doesn't play well with rvm or rbenv.  If you're
-getting a "Cocoa" problem, that might be it.  In that case:
-
-    sudo gem uninstall wkpdf
-    rm ~/.rbenv/shims/wkpdf
-    sudo /usr/bin/gem install wkpdf
-
-See this issue: <https://github.com/plessl/wkpdf/issues/36>
+Needs a helper utility to convert the HTML to PDF:
+[wkhtmltopdf](http://sourceforge.net/projects/wkhtmltopdf/). Still
+haven't found a way to manage this with brew, so for now best bet
+is just the installer from sourceforge (yuck).
 
 
 ## Publish

@@ -1,9 +1,8 @@
 My Resume in [HTML][h] and [PDF][p] formats.
 =============================
 
-  [h]: http://sef.kloninger.com/f/sk-resume.html
-  [p]: http://sef.kloninger.com/f/sk-resume.pdf
-
+  [h]: https://rawgithub.com/sefk/sef-resume/master/sef-kloninger-resume.html
+  [p]: https://rawgithub.com/sefk/sef-resume/master/sef-kloninger-resume.pdf
 
 
 ## Setup

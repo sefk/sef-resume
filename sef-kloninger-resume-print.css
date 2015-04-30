@@ -1,15 +1,15 @@
 title	    	      { font-size: 100%; }
-body                  { font-family: times,serif; font-size: 80%;
+body                  { font-family: helvetica,arial,serif; font-size: 80%;
                         margin-top: 0; padding-top: 0 }
 td                    { vertical-align: top; }
-.name                 { font-size: 300%;  font-weight: bold; 
-                        font-family: arial,sans-serif; }
-.section              { font-size: 120%; font-weight: bold; 
-                        font-family: arial,sans-serif; }
-.company              { font-size: 120%;  font-weight: bold; 
-                        font-family: arial,sans-serif; }
-.job                  { font-size: 120%; font-weight: bold; 
-                        font-family: arial,sans-serif; }
+.name                 { font-size: 300%;  font-weight: bold;
+    }
+.section              { font-size: 120%; font-weight: bold;
+    }
+.company              { font-size: 120%;  font-weight: bold;
+    }
+.job                  { font-size: 120%; font-weight: bold;
+    }
 .city                 { vertical-align: bottom; }
 .continue             { margin-top: 5pt; margin-bottom: 0pt; }
 ul                    { margin-top: 2pt; margin-bottom: 0pt; }

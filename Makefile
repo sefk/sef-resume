@@ -4,14 +4,15 @@
 
 PDF-TARGETS = sef-kloninger-resume.pdf sef-kloninger-resume-full.pdf
 HTML-TARGETS = sef-kloninger-resume-full.html
+CSS = sef-kloninger-resume.css sef-kloninger-resume-print.css
 
 all: $(HTML-TARGETS) $(PDF-TARGETS)
 	
-%.pdf: %.html
+%.pdf: %.html $(CSS)
 #	pandoc -t latex ./$< -o ./$@
 	wkhtmltopdf --print-media-type ./$< ./$@
 
-%-full.html: %.html
+%-full.html: %.html $(CSS)
 ifeq (z$(RESUME_ADDRESS),z)
 	# Can't generate full resume without $$RESUME_ADDRESS environment variable (for example "street<br>city<br>phone<br>")
 	exit 1
@@ -24,7 +25,7 @@ endif
 thumbs:
 	for i in *.png; do convert $$i -resize 25% $${i%%.png}-thumb.png; done
 
-clean: 
+clean:
 	-rm $(PDF-TARGETS) $(HTML-TARGETS)
 	-rm *-thumb.png
 

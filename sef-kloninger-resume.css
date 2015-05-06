@@ -1,4 +1,4 @@
-title	    	          { font-size: large; }
+title	    	      { font-size: large; }
 body                  { font-family: helvetica,arial,sans-serif;
                         margin-top: 0; padding-top: 0 }
 td                    { vertical-align: top; }
@@ -17,6 +17,8 @@ td                    { vertical-align: top; }
 ul                    { margin-top: 2pt; margin-bottom: 0pt; }
 P.version             { font-size: 8pt; font-style: italic;
                         text-align: right; }
+hr                    { color:#aaa; background-color:#aaa;
+                        border: none; height: 1px; }
 /* div.jobdesc        { text-align: justify; } */
 A:link, A:active, A:visited
                       { color: blue; text-decoration: none }

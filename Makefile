@@ -1,14 +1,12 @@
 # Convert resume from HTML to PDF using a super helpful little utility.
 # Only works on a Mac
-#
 
 PDF-TARGETS = sef-kloninger-resume.pdf sef-kloninger-resume-full.pdf
 HTML-TARGETS = sef-kloninger-resume-full.html
-CSS = sef-kloninger-resume.css sef-kloninger-resume-print.css
 
 all: $(HTML-TARGETS) $(PDF-TARGETS)
 	
-%.pdf: %.html $(CSS)
+%.pdf: %.html
 #	pandoc -t latex ./$< -o ./$@
 	wkhtmltopdf --print-media-type ./$< ./$@
 

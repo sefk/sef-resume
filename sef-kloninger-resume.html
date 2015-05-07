@@ -21,6 +21,7 @@
     }
 
     .name {
+      padding-top: 20px;
       font-size: 30pt;
       font-weight: bold;
     }
@@ -41,7 +42,7 @@
     }
 
     .city {
-      vertical-align: bottom;
+      verticao-align: bottom;
     }
 
     .continue {
@@ -72,6 +73,18 @@
       color: blue;
       text-decoration: none
     }
+
+    .hero img {
+      margin-left: auto;
+      margin-right: auto;
+      width: 200px;
+    }
+
+    .links a {
+      padding-right: 1em;
+    }
+
+
   </style>
 
   <style media="print">
@@ -91,6 +104,7 @@
     }
 
     .name {
+      padding-top: 20px;
       font-size: 300%;
       font-weight: bold;
     }
@@ -134,19 +148,45 @@
       text-align: right;
     }
 
+    hr {
+      color: #aaa;
+      background-color: #aaa;
+      border: none;
+      height: 1px;
+    }
+
     /* div.jobdesc        { text-align: justify; } */
     A:link, A:active, A:visited {
       color: blue;
       text-decoration: none
     }
+
+    .hero img {
+      margin-left: auto;
+      margin-right: auto;
+      width: 150px;
+      padding-left: 20px;
+    }
+
+    .links a {
+      padding-right: 1em;
+    }
+
   </style>
 
 
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-62693705-1', 'auto');
     ga('send', 'pageview');
   </script>
@@ -159,28 +199,33 @@
 
   <tr>
     <td width=15%></td>
-    <td class=name>Sef Kloninger</td>
-    <td width=27%><!-- addr --><a href="mailto:sefklon@gmail.com">sefklon@gmail.com</a>
-      <br><a href="http://sef.kloninger.com/">sef.kloninger.com</a>
-      &nbsp;&nbsp;<a href="http://twitter.com/sefk">@sefk</a>
-      <br> <a href="http://github.com/sefk">github.com/sefk</a>
+    <td>
+      <div class=name>Sef Kloninger</div>
+      <br>
+
+      <div class="links">
+        <a href="mailto:sefklon@gmail.com">sefklon@gmail.com</a>
+        <a href="http://sef.kloninger.com/">sef.kloninger.com</a>
+        <a href="http://twitter.com/sefk">@sefk</a>
+        <a href="http://github.com/sefk">github.com/sefk</a>
+      </div>
+    </td>
+    <td width=27% rowspan="2">
+      <p align="center" class="hero">
+        <img src="sef-bw.jpeg">
+      </p>
     </td>
   </tr>
-
 
   <!-- ========================================================= -->
 
-  <tr>
-    <td></td>
-    <td colspan=2>
-      <hr>
-    </td>
-  </tr>
 
   <tr>
-    <td rowspan=2 class=section width=15%>Highlights</td>
+    <td rowspan=2 class=section width=15%><br>Highlights</td>
 
-    <td colspan=2>
+    <td>
+      <br>
+
       <div class=jobdesc>
 
         <b>Hands-on full-stack engineering leader</b> who loves the Internet.

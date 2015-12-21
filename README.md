@@ -19,9 +19,9 @@ Steps to use this repo:
     brew install imagemagick
 
 Needs a helper utility to convert the HTML to PDF:
-[wkhtmltopdf](http://sourceforge.net/projects/wkhtmltopdf/). Still
-haven't found a way to manage this with brew, so for now best bet
-is just the installer from sourceforge (yuck).
+[wkhtmltopdf](http://wkhtmltopdf.org/). 
+Still haven't found a way to manage this with brew.
+At least no longer from Sourceforge.
 
 
 ## Publish

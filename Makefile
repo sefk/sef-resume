@@ -1,4 +1,4 @@
-# Convert resume from HTML to PDF using a super helpful little utility.
+# Convert resume from HTML to PDF using a helpful utility.
 # Only works on a Mac
 
 PDF-TARGETS = sef-kloninger-resume.pdf sef-kloninger-resume-full.pdf

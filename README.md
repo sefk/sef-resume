@@ -1,9 +1,7 @@
-My Resume in [HTML][h] and [PDF][p] formats.
-=============================
+# My Resume in [HTML][h] and [PDF][p] formats
 
   [h]: https://rawgithub.com/sefk/sef-resume/master/sef-kloninger-resume.html
   [p]: https://rawgithub.com/sefk/sef-resume/master/sef-kloninger-resume.pdf
-
 
 ## Setup
 
@@ -19,10 +17,9 @@ Steps to use this repo:
     brew install imagemagick
 
 Needs a helper utility to convert the HTML to PDF:
-[wkhtmltopdf](http://wkhtmltopdf.org/). 
+[wkhtmltopdf](http://wkhtmltopdf.org/).
 Still haven't found a way to manage this with brew.
 At least no longer from Sourceforge.
-
 
 ## Publish
 
@@ -31,8 +28,7 @@ At least no longer from Sourceforge.
 3. git commit; git push
 
 Then you can use these links to serve directly from GitHub.
-<https://rawgithub.com/sefk/sef-resume/master/sef-kloninger-resume.html> and 
+<https://rawgithub.com/sefk/sef-resume/master/sef-kloninger-resume.html> and
 <https://rawgithub.com/sefk/sef-resume/master/sef-kloninger-resume.pdf>.
 
 Simple as pie.
-

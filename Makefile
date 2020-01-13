@@ -27,3 +27,6 @@ clean:
 	-rm $(PDF-TARGETS) $(HTML-TARGETS)
 	-rm *-thumb.png
 
+tidy:
+	tidy -m -i $(HTML-TARGETS)
+

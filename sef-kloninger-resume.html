@@ -21,8 +21,14 @@
     }
 
     .name {
-      font-size: 30pt;
+      font-size: 34pt;
       font-weight: bold;
+    }
+
+    .subname {
+      font-size: 14pt;
+      font-weight: normal;
+      font-style: italic;
     }
 
     .section {
@@ -159,7 +165,10 @@
 
   <tr>
     <td width="15%"></td>
-    <td class="name">Sef Kloninger</td>
+    <td>
+      <span class="name">Sef Kloninger</span><br>
+      <span class="subname">John Josef Kloninger (full name)</span>
+    </td>
     <td width="27%"><!-- addr --><a href="mailto:sefklon@gmail.com">sefklon@gmail.com</a>
       <br><a href="http://sef.kloninger.com/">sef.kloninger.com</a>
       &nbsp;&nbsp;<a href="http://twitter.com/sefk">@sefk</a>
@@ -187,7 +196,7 @@
         My expertise is building, scaling, and operating distributed systems.
         My roots are in backend/ops but I've dabbled in full stack.
 
-        I've led teams of 100+ engineers at Akamai and VMware, and small teams at Google, Ning, and Stanford.
+        I've led teams of large teams 100+ at Akamai and VMware, and small teams at Google, Ning, and Stanford.
 
         I built and launched an open-source online learning platform in eleven weeks.
 
@@ -224,19 +233,26 @@
     <td colspan="2">
       <div class="jobdesc">
         <b>Google Cloud</b>. Managed development for
-        <a href="https://cloud.google.com/iam">Cloud IAM</a> (Policy Semantics) and
+        <a href="https://cloud.google.com/iam">Cloud IAM</a> and
         <a href="https://firebase.google.com/docs/rules">Firebase Rules</a>.
-        Enforced authorization for end-user and admin policies all Google Cloud products
-        Carried the pager for production on-call rotations during entire Google tenure.
+        Built the services that provide service authorization (1P and 3P) for Google Cloud products.
+        Met stringent performance and availability SLO's in a mission-critical service that is a
+        fail-closed dependency for all of Google Cloud.
+        Delivered new authorization features into an excceptioanlly challenging stack.
+        Lead teams of developers and managers teams of up to 25.
         Managed Google's <a href="https://github.com/google/cel-go">Common Expression Language (CEL)</a>,
-        our core expression parsing/evaluation library.
+        a small embedded policy langugage for fast and safe evaluation.
+        Carried a pager for production on-call during entire Google tenure.
+        Established and ran agile development practices.
         <p>
           <b>YouTube</b> (2015-2018).
-          Scaled up and added key features to the main Data Warehouse storing telemetry from
+          Scaled up and added key features to the central Data Warehouse of telemetry from
           <a href="https://www.youtube.com/yt/press/statistics.html">over a billion active users</a>.
-          Managed the team that owned scheduling and monitoring ETL pipelines.
-          Primary decision maker on warehouse operations, resource management, capacity planning, and
-          security, working with SRE and Resource Managers.
+          Owned systems providing big data processing services, collaborating across
+          teams and locations.
+          Ran thousands of ETL pipelines daily.
+          Primary decision maker on warehouse operations, resource management, capacity
+          planning, and security.
         </p>
       </div>
   </tr>
@@ -266,10 +282,10 @@
     <td></td>
     <td colspan="2">
       <div class="jobdesc">
-        Led six engineers building pre-launch service for monitoring infrastructure at scale.
+        Led a small team of engineers building pre-launch service for monitoring infrastructure at scale.
         Developed backend features in Java and frontend features in JavaScript (Bootstrap, FlightJS, Require).
-        Operated sizable Amazon Web Services deployment with Chef: cleaned up security groups and IAM roles.
-        Cut COGS by 50%.
+        Operated sizable Amazon Web Services deployment with Chef; cleaned up security groups and IAM roles.
+        Cut infrastructure costs by 50%.
         Went on to be acquired by VMware.
       </div>
   </tr>
@@ -313,9 +329,9 @@
         Ran successfully for 200k students until merged with edX in April 2013.
 
         <ul>
-          <li><b>Engineering Manager</b>: Line managed small engineering team.
-            Ran agile process with weekly sprints and demos; established code
-            review and releases.
+          <li>
+            <b>Engineering Manager</b>: Line managed small engineering team.
+            Ran agile process with weekly sprints and demos; established code review and releases.
             Hired three engineers and many students.
 
             Set up
@@ -324,15 +340,19 @@
             Huboard and Google Docs.
 
             Established <i>just enough</i> process.
+          </li>
 
-          <li><b>Dev/Ops and Release</b>: architect of the run-time system
-            built on AWS (EC2, S3, RDS, SES), ansible/chef, and celery/SQS.
+          <li>
+            <b>Dev/Ops and Release</b>: architect of the run-time system built on AWS (EC2, S3,
+            RDS, SES), ansible/chef, and celery/SQS.
             Lived and breathed Git.
-            Coordinated all releases.
-            Managed capacity, fixed production issues.
+            Managed all releases.
+            Owned capacity and costs, fixed production and security issues.
+          </li>
 
-          <li><b>Core Engineer</b>: core app features: queueing, oAuth
-            integration, and operations tools.
+          <li>
+            <b>Core Engineer</b>: core app features: queueing, oAuth integration, and operations tools.
+          </li>
         </ul>
       </div>
 

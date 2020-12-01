@@ -1,8 +1,8 @@
 # Convert resume from HTML to PDF using a helpful utility.
 # Only works on a Mac
 
-PDF-TARGETS = sef-kloninger-resume.pdf sef-kloninger-govt-resume.pdf sef-kloninger-resume-full.pdf sef-kloninger-govt-resume-full.pdf
-HTML-TARGETS = sef-kloninger-resume-full.html sef-kloninger-govt-resume-full.html
+PDF-TARGETS = sef-kloninger-resume.pdf sef-kloninger-resume-full.pdf
+HTML-TARGETS = sef-kloninger-resume-full.html
 
 all: $(HTML-TARGETS) $(PDF-TARGETS)
 	

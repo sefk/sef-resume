@@ -8,7 +8,7 @@ all: $(HTML-TARGETS) $(PDF-TARGETS)
 	
 %.pdf: %.html
 #	pandoc -t latex ./$< -o ./$@
-	wkhtmltopdf --enable-local-file-access --print-media-type ./$< ./$@
+	wkhtmltopdf --enable-local-file-access --print-media-type --page-size Letter --disable-smart-shrinking ./$< ./$@
 
 %-full.html: %.html $(CSS)
 ifeq (z$(RESUME_ADDRESS),z)

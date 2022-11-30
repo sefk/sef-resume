@@ -1,7 +1,7 @@
-# My Resume in [HTML][h] and [PDF][p] formats
+# My Resume in [HTML][] and [PDF][] formats
 
-  [h]: https://rawgithub.com/sefk/sef-resume/master/sef-kloninger-resume.html
-  [p]: https://rawgithub.com/sefk/sef-resume/master/sef-kloninger-resume.pdf
+[HTML]: https://rawgithub.com/sefk/sef-resume/master/sef-kloninger-resume.html
+[PDF]: https://rawgithub.com/sefk/sef-resume/master/sef-kloninger-resume.pdf
 
 ## Setup
 

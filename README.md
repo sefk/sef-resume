@@ -16,7 +16,7 @@ Steps to use this repo:
     # imagemagick is used for thumbnails
     brew install imagemagick
     brew install tidy-html5
-    brew cask install wkhtmltpdf
+    brew install --cask wkhtmltopdf
 
 ## Publish
 

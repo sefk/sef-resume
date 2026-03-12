@@ -1,69 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sef Kloninger Resume</title>
 
   <style>
-    title {
-      font-size: large;
-    }
-
     body {
       font-family: helvetica, arial, sans-serif;
-      margin-top: 0;
-      padding-top: 0
+      margin: 0;
+      padding: 0 1rem;
     }
 
-    td {
-      vertical-align: top;
+    .resume {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* ---- Header ---- */
+    .resume-header {
+      display: grid;
+      grid-template-columns: 15% 1fr 27%;
+      align-items: start;
+      padding-bottom: 0.5rem;
     }
 
     .name {
-      font-size: 34pt;
+      font-size: 2.2rem;
       font-weight: bold;
+      line-height: 1.2;
     }
 
     .subname {
-      font-size: 14pt;
+      font-size: 0.9rem;
       font-weight: normal;
       font-style: italic;
     }
 
-    .section {
-      font-size: large;
+    .contact {
+      line-height: 1.8;
+    }
+
+    /* ---- Section Layout ---- */
+    .resume-section {
+      display: grid;
+      grid-template-columns: 15% 1fr;
+      gap: 0 1rem;
+      padding: 0.5rem 0;
+    }
+
+    .section-label {
+      font-size: 1rem;
       font-weight: bold;
     }
 
+    /* ---- Job Entries ---- */
+    .job-header,
+    .job-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
     .company {
-      font-size: large;
+      font-size: 1rem;
       font-weight: bold;
     }
 
     .job {
-      font-size: medium;
       font-weight: bold;
     }
 
-    .city {
-      vertical-align: bottom;
+    .sub-role {
+      margin-top: 0.75rem;
     }
 
-    .continue {
-      margin-top: 5pt;
-      margin-bottom: 0pt;
+    .jobdesc p {
+      margin-top: 0.3rem;
+      margin-bottom: 0;
     }
 
     ul {
-      margin-top: 2pt;
-      margin-bottom: 0pt;
+      margin-top: 0.2rem;
+      margin-bottom: 0;
     }
 
-    P.version {
-      font-size: 8pt;
-      font-style: italic;
-      text-align: right;
+    ul.three-col {
+      columns: 3;
     }
 
     hr {
@@ -73,799 +97,512 @@
       height: 1px;
     }
 
-    /* div.jobdesc        { text-align: justify; } */
-    A:link, A:active, A:visited {
+    a:link, a:active, a:visited {
       color: blue;
-      text-decoration: none
-    }
-  </style>
-
-  <style media="print">
-    title {
-      font-size: 100%;
+      text-decoration: none;
     }
 
-    body {
-      font-family: helvetica, arial, serif;
-      font-size: 80%;
-      margin-top: 0;
-      padding-top: 0
-    }
-
-    td {
-      vertical-align: top;
-    }
-
-    .name {
-      font-size: 300%;
-      font-weight: bold;
-    }
-
-    .section {
-      font-size: 120%;
-      font-weight: bold;
-    }
-
-    .company {
-      font-size: 120%;
-      font-weight: bold;
-    }
-
-    .job {
-      font-size: 120%;
-      font-weight: bold;
-    }
-
-    .jobsection {
-      padding-top: 1em;
-    }
-
-    .city {
-      vertical-align: bottom;
-    }
-
-    .continue {
-      margin-top: 5pt;
-      margin-bottom: 0pt;
-    }
-
-    ul {
-      margin-top: 2pt;
-      margin-bottom: 0pt;
-    }
-
-    P.version {
-      font-size: 8pt;
+    p.version {
+      font-size: 0.7rem;
       font-style: italic;
       text-align: right;
     }
 
-    /* div.jobdesc        { text-align: justify; } */
-    A:link, A:active, A:visited {
-      color: blue;
-      text-decoration: none
+    /* ---- Print Overrides ---- */
+    @media print {
+      body {
+        font-size: 80%;
+      }
+
+      .name {
+        font-size: 3rem;
+      }
+
+      .section-label,
+      .company,
+      .job {
+        font-size: 1.2em;
+      }
+
+      .sub-role {
+        padding-top: 1em;
+      }
     }
   </style>
 
-
   <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- TODO: UA- (Universal Analytics) was sunset July 2023; migrate to GA4 with a G- measurement ID.
+       Also verify token: sef.kloninger.com site config specifies UA-30366531-1, not UA-62693705-1. -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-62693705-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'UA-62693705-1');
   </script>
 
-
 </head>
 <body>
+<div class="resume">
 
-<table>
-
-  <tr>
-    <td width="15%"></td>
-    <td>
-      <span class="name">Sef Kloninger</span><br>
-      <span class="subname">John Josef Kloninger (full name)</span>
-    </td>
-    <td width="27%"><!-- addr --><a href="mailto:sefklon@gmail.com">sefklon@gmail.com</a>
-      <br><a href="http://sef.kloninger.com/">sef.kloninger.com</a>
+  <!-- ===== Header ===== -->
+  <div class="resume-header">
+    <div></div>
+    <div>
+      <div class="name">Sef Kloninger</div>
+      <div class="subname">John Josef Kloninger (full name)</div>
+    </div>
+    <div class="contact">
+      <a href="mailto:sefklon@gmail.com">sefklon@gmail.com</a>
+      <br><a href="https://sef.kloninger.com/">sef.kloninger.com</a>
       &nbsp;&nbsp;<a href="https://hachyderm.io/@sefk">@sefk</a>
-      <br> <a href="http://github.com/sefk">github.com/sefk</a>
-    </td>
-  </tr>
+      <br><a href="https://github.com/sefk">github.com/sefk</a>
+    </div>
+  </div>
 
-  <!-- ========================================================= -->
+  <hr>
 
-  <tr>
-    <td></td>
-    <td colspan="2">
-      <hr>
-    </td>
-  </tr>
+  <!-- ===== Highlights ===== -->
+  <div class="resume-section">
+    <div class="section-label">Highlights</div>
+    <div class="section-content">
+      <strong>I am semi-retired</strong> from a thirty-year career as an
+      engineering manager. I love developing software and systems: building,
+      scaling, operating. My roots are in distributed systems and data
+      processing, but I've worked almost everywhere in the stack. I've led
+      teams small (4&ndash;40 at Google and Ning) and large (100+ at Akamai and
+      VMware). I led a small team that
+      <a href="https://engineering.stanford.edu/news/stanford-launches-class2go-open-source-platform-online-classes">built and launched</a>
+      an open-source online learning platform for Stanford in 11 weeks. My 2012
+      <a href="https://sef.kloninger.com/posts/201205engineering-culture-litmus-tests/">blog post</a>
+      was the top post on Hacker News for a day.
+    </div>
+  </div>
 
-  <tr>
-    <td rowspan="2" class="section" width="15%">Highlights</td>
+  <hr>
 
-    <td colspan="2">
-      <div class="jobdesc">
-          <strong>I am semi-retired</strong> from a thirty-year career as an
-          engineering manager. I love developing software and systems: building,
-          scaling, operating. My roots are in distributed systems and data
-          processing, but I've worked almost everywhere in the stack. I've led
-          teams small (4-40 at Google and Ning) and large (100+ at Akamai and
-          VMware). I led a small team that 
-          <a href="https://engineering.stanford.edu/news/stanford-launches-class2go-open-source-platform-online-classes">
-          built and launched
-          </a>
-          an open-source online learning platform for Stanford in 11 weeks. My 2012
-          <a href="https://sef.kloninger.com/posts/201205engineering-culture-litmus-tests/">blog post</a>
-          was the top post on Hacker News for a day.
-      </div>
-    </td>
-  </tr>
+  <!-- ===== Work Experience ===== -->
+  <div class="resume-section">
+    <div class="section-label">Work<br>Experience</div>
+    <div class="section-content">
 
-  <!-- ========================================================= -->
-
-  <tr>
-    <td colspan="2">
-      <hr>
-    </td>
-  </tr>
-
-  <tr>
-    <td rowspan="2" class="section" width="15%">Work<br>Experience</td>
-    <td class="company">Google</td>
-    <td class="city">Mountain View, CA</td>
-  </tr>
-
-  <tr>
-    <td class="job">Engineering Manager (L7)</td>
-    <td>(9/2015-10/2025)</td>
-  </tr>
-
-  <tr>
-    <td></td>
-    <td colspan="2">
-      <div class="jobdesc">
-        <p>
-          <b>Search Data Warehouse</b> (2021-25). Managed teams delivering the largest and
-          most used datasets in Search.
-
-          Processed the activity of billions of Search users into OLAP-ready datasets
-          experimentation, model training, and exploratory and strategic analysis.
-
-          Built new data products for analytics needs of AI-first search experiences.
-          Adapted 20-year-old analytics stack to new privacy and regulatory demands.
-        </p>
-
-        <p>
-          <b>Google Cloud</b> (2018-21).
-          Managed development for core authorization services,
-          <a href="https://cloud.google.com/iam">Cloud IAM</a> (1P) and
-          <a href="https://firebase.google.com/docs/rules">Firebase Rules</a> (3P).
-          IAM is a fail-close dependency for all Cloud services demanding stringent
-          performance and availability SLO's.
-          
-          Lead teams of developers and managers teams of up to 25.
-          Managed small team that owned Google's
-          <a href="https://github.com/google/cel-go">Common Expression Language (CEL)</a>,
-          a small embedded policy language for fast and safe evaluation; drove open source adoption.
-        </p>
-
-        <p>
-          <b>YouTube</b> (2015-18).
-          Scaled up and added key features to the central Data Warehouse of telemetry from
-          <a href="https://www.youtube.com/yt/press/statistics.html">over a billion active users</a>.
-          Owned systems providing big data processing services, collaborating across
-          teams and locations.
-          Ran thousands of ETL pipelines daily.
-          Primary decision maker on warehouse operations, resource management, capacity
-          planning, and security.
-        </p>
-      </div>
-  </tr>
-
-  <!-- ========================================================= -->
-
-  <tr>
-    <td></td>
-    <td colspan="2">
-      <hr>
-    </td>
-  </tr>
-
-  <tr>
-    <td></td>
-    <td class="company">Wavefront</td>
-    <td class="city">Palo Alto, CA</td>
-  </tr>
-
-  <tr>
-    <td></td>
-    <td class="job">VP Engineering</td>
-    <td>(9/2014-3/2015)</td>
-  </tr>
-
-  <tr>
-    <td></td>
-    <td colspan="2">
-      <div class="jobdesc">
-        Led a small team of engineers building a pre-launch service for monitoring infrastructure at scale.
-        Developed backend features in Java and frontend features in JavaScript (Bootstrap, FlightJS, Require).
-        Operated sizable Amazon Web Services deployment with Chef; cleaned up security groups and IAM roles.
-        Cut infrastructure costs by 50%.
-        Went on to be acquired by VMware.
-      </div>
-  </tr>
-
-  <!-- ========================================================= -->
-
-  <tr>
-    <td></td>
-    <td colspan="2">
-      <hr>
-    </td>
-  </tr>
-
-  <tr>
-    <td></td>
-    <td class="company">Stanford Online</td>
-    <td class="city">Palo Alto, CA</td>
-  </tr>
-
-  <tr>
-    <td></td>
-    <td class="job">Head of Engineering, Open Source Platform</td>
-    <td>(6/2012-8/2014)</td>
-  </tr>
-
-  <tr>
-    <td></td>
-    <td colspan="2">
-      <div class="jobdesc">
-        Engineering manager and developer on <a href="http://class.stanford.edu/">Open edX</a>,
-        Stanford's open-source platform for Massive Open On-Line Courses (MOOC's).
-
-        Senior technical member of the Stanford's new Online Education effort,
-        developing strategy and presenting to senior leaders and trustees.
-
-        Reported to <a href="https://profiles.stanford.edu/john-mitchell">John Mitchell</a>,
-        Vice Provost for Online Learning.
-
-        Over Summer 2012 
-        <a href="https://news.stanford.edu/news/2012/september/class2go-online-platform-091212.html"></a>built and launched Class2Go</a>,
-        the first open-source MOOC platform.
-        Ran successfully for 200k students until merged with edX in April 2013.
-
-        <ul>
-          <li>
-            <b>Engineering Manager</b>: Line managed small engineering team.
-            Ran agile process with weekly sprints and demos; established code review and releases.
-            Hired three engineers and many students.
-
-            Set up
-            <a href="http://github.com/Stanford-Online/class2go">GitHub</a>,
-            <a href="http://github.com/Stanford-Online/class2go/issues">GitHub Issues</a>,
-            Huboard and Google Docs.
-
-            Established <i>just enough</i> process.
-          </li>
-
-          <li>
-            <b>Dev/Ops and Release</b>: architect of the run-time system built on AWS (EC2, S3,
-            RDS, SES), ansible/chef, and celery/SQS.
-            Lived and breathed Git.
-            Managed all releases.
-            Owned capacity and costs, fixed production and security issues.
-          </li>
-
-          <li>
-            <b>Core Engineer</b>: core app features: queueing, oAuth integration, and operations tools.
-          </li>
-        </ul>
+      <!-- Google -->
+      <div class="job-entry">
+        <div class="job-header">
+          <span class="company">Google</span>
+          <span class="city">Mountain View, CA</span>
+        </div>
+        <div class="job-title-row">
+          <span class="job">Engineering Manager (L7)</span>
+          <span>(9/2015&ndash;10/2025)</span>
+        </div>
+        <div class="jobdesc">
+          <p>
+            <b>Search Data Warehouse</b> (2021&ndash;25). Managed teams delivering the largest and
+            most used datasets in Search.
+            Processed the activity of billions of Search users into OLAP-ready datasets for
+            experimentation, model training, and exploratory and strategic analysis.
+            Built new data products for analytics needs of AI-first search experiences.
+            Adapted 20-year-old analytics stack to new privacy and regulatory demands.
+          </p>
+          <p>
+            <b>Google Cloud</b> (2018&ndash;21).
+            Managed development for core authorization services,
+            <a href="https://cloud.google.com/iam">Cloud IAM</a> (1P) and
+            <a href="https://firebase.google.com/docs/rules">Firebase Rules</a> (3P).
+            IAM is a fail-close dependency for all Cloud services demanding stringent
+            performance and availability SLOs.
+            Led teams of developers and managers of up to 25.
+            Managed small team that owned Google's
+            <a href="https://github.com/google/cel-go">Common Expression Language (CEL)</a>,
+            a small embedded policy language for fast and safe evaluation; drove open source adoption.
+          </p>
+          <p>
+            <b>YouTube</b> (2015&ndash;18).
+            Scaled up and added key features to the central Data Warehouse of telemetry from
+            <a href="https://www.youtube.com/yt/press/statistics.html">over a billion active users</a>.
+            Owned systems providing big data processing services, collaborating across
+            teams and locations.
+            Ran thousands of ETL pipelines daily.
+            Primary decision maker on warehouse operations, resource management, capacity
+            planning, and security.
+          </p>
+        </div>
       </div>
 
-  </tr>
-
-
-  <!-- ========================================================= -->
-
-  <tr>
-    <td></td>
-    <td colspan="2">
       <hr>
-    </td>
-  </tr>
 
-  <tr>
-    <td></td>
-    <td class="company">Ning</td>
-    <td class="city">Palo Alto, CA</td>
-  </tr>
-
-  <tr>
-    <td></td>
-    <td class="job">VP Infrastructure Engineering and Operations</td>
-    <td>(12/2010-4/2012)</td>
-  </tr>
-
-  <tr>
-    <td></td>
-    <td colspan="2">
-      <div class="jobdesc">
-
-        <b>Operations.</b>
-
-        Oversaw the team running a medium-sized platform: 100K sites,
-        300M requests/day, 60M uniques/month, 240TB of user-generated content.
-
-        Maintained four nines of availability.
-
-        Established set of core technical metrics: incidents, availability,
-        and performance.
-
-        Built a mini-NOC.
-
-        Defeneded againt DDoS attacks by choosing protection service provider
-        after build vs. buy analysis.
-
-        <p class="continue">
-          <b>Infrastructure.</b>
-
-          Line managed senior engineers on the core Ning platform: relational
-          and key/value content, blob storage, messaging, service discovery,
-          mail, activity, and API's.
-
-          ~50 RESTful Java services.
-
-          Ran project to convert Oracle to sharded MySQL.
-
-          Improved performance by restructuring JS and CSS and targeted
-          rewrites.
-
-          Responsible for development and support of the
-          <a href="http://developer.ning.com/">Ning API</a>.
-
-          <p class="continue">Left shortly after Glam Media acquisition (12/2011).
+      <!-- Wavefront -->
+      <div class="job-entry">
+        <div class="job-header">
+          <span class="company">Wavefront</span>
+          <span class="city">Palo Alto, CA</span>
+        </div>
+        <div class="job-title-row">
+          <span class="job">VP Engineering</span>
+          <span>(9/2014&ndash;3/2015)</span>
+        </div>
+        <div class="jobdesc">
+          <p>
+            Led a small team of engineers building a pre-launch service for monitoring infrastructure at scale.
+            Developed backend features in Java and frontend features in JavaScript (Bootstrap, FlightJS, Require).
+            Operated sizable Amazon Web Services deployment with Chef; cleaned up security groups and IAM roles.
+            Cut infrastructure costs by 50%.
+            Went on to be acquired by VMware.
+          </p>
+        </div>
       </div>
 
-  </tr>
-
-
-  <!-- ========================================================= -->
-
-  <tr>
-    <td></td>
-    <td colspan="2">
       <hr>
-    </td>
-  </tr>
 
-  <tr>
-    <td></td>
-    <td class="company">VMware</td>
-    <td class="city">Palo Alto, CA</td>
-  </tr>
-
-  <tr>
-    <td></td>
-    <td class="job">Senior Director, Desktop Virtualization Engineering</td>
-    <td>(5/2008-12/2010)</td>
-  </tr>
-
-  <tr>
-    <td></td>
-    <td colspan="2">
-      <div class="jobdesc">
-
-        Delivered server and client virtualization enterprise software to improve
-        how corporate Windows desktops are deployed and managed.
-
-        Hired to line-manage a small engineering team, grew to leading
-        engineering for the Desktop Business Unit with 140 engineers in the
-        US, UK, India, and China.
-
-        Managed managers, directors, and three principal engineers
-        (VMware's most senior technical role).
-
-        <p class="continue">
-          Delivered major releases that grew Desktop from $10M to $100M.
-
-          Owned engineering for enterprise products,
-          <a href="http://www.vmware.com/products/view/">VMware View</a>
-          remote virtual desktops and
-          <a href="http://www.vmware.com/products/thinapp/">ThinApp</a>
-          Windows appplication virtualization;
-
-          personal virtualization with
-          <a href="http://www.vmware.com/products/workstation/">Workstation</a>
-          (Windows and Linux) and
-          <a href="http://www.vmware.com/products/fusion/">Fusion</a>
-          (Mac).
-
-          Technical sponsor of two strategic transactions: acquisition of RTO
-          Software for profile virtualization and OEM of Teradici's PCoIP
-          remote display protocol.
+      <!-- Stanford Online -->
+      <div class="job-entry">
+        <div class="job-header">
+          <span class="company">Stanford Online</span>
+          <span class="city">Palo Alto, CA</span>
+        </div>
+        <div class="job-title-row">
+          <span class="job">Head of Engineering, Open Source Platform</span>
+          <span>(6/2012&ndash;8/2014)</span>
+        </div>
+        <div class="jobdesc">
+          <p>
+            Engineering manager and developer on <a href="https://class.stanford.edu/">Open edX</a>,
+            Stanford's open-source platform for Massive Open On-Line Courses (MOOCs).
+            Senior technical member of Stanford's new Online Education effort,
+            developing strategy and presenting to senior leaders and trustees.
+            Reported to <a href="https://profiles.stanford.edu/john-mitchell">John Mitchell</a>,
+            Vice Provost for Online Learning.
+          </p>
+          <p>
+            Over Summer 2012,
+            <a href="https://news.stanford.edu/news/2012/september/class2go-online-platform-091212.html">built and launched Class2Go</a>,
+            the first open-source MOOC platform.
+            Ran successfully for 200k students until merged with edX in April 2013.
+          </p>
+          <ul>
+            <li>
+              <b>Engineering Manager</b>: Line managed small engineering team.
+              Ran agile process with weekly sprints and demos; established code review and releases.
+              Hired three engineers and many students.
+              Set up <a href="https://github.com/Stanford-Online/class2go">GitHub</a>,
+              GitHub Issues, Huboard and Google Docs.
+              Established <i>just enough</i> process.
+            </li>
+            <li>
+              <b>Dev/Ops and Release</b>: architect of the run-time system built on AWS (EC2, S3,
+              RDS, SES), ansible/chef, and celery/SQS.
+              Lived and breathed Git.
+              Managed all releases.
+              Owned capacity and costs, fixed production and security issues.
+            </li>
+            <li>
+              <b>Core Engineer</b>: core app features: queueing, oAuth integration, and operations tools.
+            </li>
+          </ul>
+        </div>
       </div>
-    </td>
-  </tr>
 
-
-  <!-- ========================================================= -->
-
-  <tr>
-    <td></td>
-    <td colspan="2">
       <hr>
-    </td>
-  </tr>
 
-  <tr>
-    <td></td>
-    <td class="company">Akamai Technologies</td>
-    <td class="city">San Mateo, CA (2007-08)</td>
-  </tr>
-
-
-  <!-- Service Perf  -->
-  <tr>
-    <td></td>
-    <td class="job">Senior Director, Service Performance (2005-08)</td>
-    <td class="city">Cambridge, MA (1999-07)</td>
-  </tr>
-
-  <tr>
-    <td></td>
-    <td colspan="2">
-      <div class="jobdesc">
-        Founded the Service Performance group in Networks &amp; Operations
-        for advanced ops and high-touch customer engagements.
-
-        Grew organization from six to 35 engineers and architects in US and India.
-
-        <p class="continue">
-          Improve service reliability by driving bulletproofing and
-          scaling initiatives.
-
-          Managed Akamai's incident response process.
-
-          Define and measure core platform quality metrics, presented quarterly to
-          CEO and Chief Scientist.
-
-          Owned high-touch customer escalations and events, including:
-          2006 Olympics, March Madness, Microsoft patch Tuesdays, Hulu's launch,
-          and Apple iPhone launch.
-
-          Designed a unique cache hierarchy setup for long-tail social
-          networking content.
+      <!-- Ning -->
+      <div class="job-entry">
+        <div class="job-header">
+          <span class="company">Ning</span>
+          <span class="city">Palo Alto, CA</span>
+        </div>
+        <div class="job-title-row">
+          <span class="job">VP Infrastructure Engineering and Operations</span>
+          <span>(12/2010&ndash;4/2012)</span>
+        </div>
+        <div class="jobdesc">
+          <p>
+            <b>Operations.</b>
+            Oversaw the team running a medium-sized platform: 100K sites,
+            300M requests/day, 60M uniques/month, 240TB of user-generated content.
+            Maintained four nines of availability.
+            Established set of core technical metrics: incidents, availability, and performance.
+            Built a mini-NOC.
+            Defended against DDoS attacks by choosing protection service provider
+            after build vs. buy analysis.
+          </p>
+          <p>
+            <b>Infrastructure.</b>
+            Line managed senior engineers on the core Ning platform: relational
+            and key/value content, blob storage, messaging, service discovery,
+            mail, activity, and APIs.
+            ~50 RESTful Java services.
+            Ran project to convert Oracle to sharded MySQL.
+            Improved performance by restructuring JS and CSS and targeted rewrites.
+            Responsible for development and support of the
+            <a href="https://developer.ning.com/">Ning API</a>.
+          </p>
+          <p>Left shortly after Glam Media acquisition (12/2011).</p>
+        </div>
       </div>
-    </td>
-  </tr>
 
-
-  <!-- Engineering -->
-
-  <tr>
-    <td></td>
-    <td class="job" colspan="2" style="padding-top:1em;">
-        Director and Senior Director, Engineering (1999-05)</td>
-    <td></td>
-  </tr>
-
-
-  <tr>
-    <td></td>
-    <td colspan="2">
-      <div class="jobdesc">
-        Engineering Manager of 20-50 engineers and managers.
-
-        Led technical hiring during company growth, then managed
-        transitions and motivated teams during staff reductions.
-
-        Mentor to other managers, senior engineers, and architects.
-
-        Established processes for development, QA, and release
-        engineering.
-
-        Oversaw technical integration of two acquired companies.
-
-        <p class="continue">
-          Hands-on technical leader of Akamai's core technology.
-
-          Handled many urgent service incidents; one of five crisis managers
-          called in for the big problems.
-
-        <table width="100%">
-          <tr>
-            <td width="35%">
-              <ul>
-                <li>Communication infra.</li>
-              </ul>
-            </td>
-            <td width="35%">
-              <ul>
-                <li>Security systems</li>
-              </ul>
-            </td>
-            <td width="30%">
-              <ul>
-                <li>HTTP and DNS</li>
-              </ul>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <ul>
-                <li>Load balancing</li>
-              </ul>
-            </td>
-            <td>
-              <ul>
-                <li>Coherence protocols</li>
-              </ul>
-            </td>
-            <td>
-              <ul>
-                <li>Fault tolerance</li>
-              </ul>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <ul>
-                <li>Linux kernel</li>
-              </ul>
-            </td>
-            <td>
-              <ul>
-                <li>Operations tools</li>
-              </ul>
-            </td>
-            <td>
-              <ul>
-                <li>Performance</li>
-              </ul>
-            </td>
-          </tr>
-        </table>
-
-        <tr>
-          <td></td>
-          <td class="job">Senior Software Engineer (1999)</td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td colspan="2">
-            <div class="jobdesc">
-              Lead engineer on HTTP content server. Scaled technology and
-              features for rapid pre-IPO growth.
-            </div>
-          </td>
-        </tr>
-
-        <!-- end Akamai -->
-
-
-        <!-- ========================================================= -->
-
-        <tr>
-          <td></td>
-          <td colspan="2">
-            <hr>
-          </td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td class="company">FarSight Financial Services</td>
-          <td class="city">Cambridge, MA (1998-99)</td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td class="job">Senior Performance Engineer</td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td colspan="2">
-            <div class="jobdesc">
-              Enhanced performance of a website for retail on-line stock trading.
-              Profiled systems, rewrote critical code paths (C++), and optimized
-              database queries and schemas (Sybase).
-            </div>
-          </td>
-        </tr>
-
-        <!-- end Farsight -->
-
-        <!-- ========================================================= -->
-
-
-        <tr>
-          <td></td>
-          <td class="company">Venturcom</td>
-          <td class="city">Cambridge, MA (1996-98)</td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td class="job">Principal Software Engineer</td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td colspan="2">
-            <div class="jobdesc">
-              Principal architect, engineer, and team lead of Component
-              Integrator, a tool for customizing and embedding Windows NT and CE.
-
-              Product bought by Microsoft, later released as the
-              <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/xpehelp/html/xeconaboutwindowsxpembeddedstudio.asp">Windows
-                Embedded Studio</a>.
-
-              Venturcom eventually became Ardence, acquired by Citrix.
-
-            </div>
-          </td>
-        </tr>
-
-        <!-- end Venturcom -->
-
-        <!-- ========================================================= -->
-
-
-        <tr>
-          <td></td>
-          <td class="company">McKinsey &amp; Company, IT</td>
-          <td class="city">Cambridge, MA (1993-96)</td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td class="job">Principal Software Engineer</td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td colspan="2">
-            <div class="jobdesc">
-              Led development of client/server human resource system for
-              internal use.
-
-              Enhanced and optimized custom database replication system (Oracle).
-
-              Attended week-long training sessions on communication skills,
-              writing, and problem solving.
-            </div>
-          </td>
-        </tr>
-
-        <!-- end McKinsey -->
-
-        <!-- ========================================================= -->
-
-
-        <tr>
-          <td></td>
-          <td class="company">Veritas Software</td>
-          <td class="city">Santa Clara, CA (1990-93)</td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td class="job">Software Engineer (Part-Time)</td>
-          <td></td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td colspan="2">
-            <div class="jobdesc">
-              Developed and tested Visual Administrator tool suite (C, Motif, Xt).
-            </div>
-          </td>
-        </tr>
-
-        <!-- end Veritas -->
-
-      </div>
-    </td>
-  </tr>
-  <!-- end Work Experience -->
-
-  <!-- ========================================================= -->
-
-  <tr>
-    <td></td>
-    <td colspan="2">
       <hr>
-    </td>
-  </tr>
 
-  <tr>
-    <td class="section">Activites</td>
-    <td colspan="2">
+      <!-- VMware -->
+      <div class="job-entry">
+        <div class="job-header">
+          <span class="company">VMware</span>
+          <span class="city">Palo Alto, CA</span>
+        </div>
+        <div class="job-title-row">
+          <span class="job">Senior Director, Desktop Virtualization Engineering</span>
+          <span>(5/2008&ndash;12/2010)</span>
+        </div>
+        <div class="jobdesc">
+          <p>
+            Delivered server and client virtualization enterprise software to improve
+            how corporate Windows desktops are deployed and managed.
+            Hired to line-manage a small engineering team, grew to leading
+            engineering for the Desktop Business Unit with 140 engineers in the
+            US, UK, India, and China.
+            Managed managers, directors, and three principal engineers
+            (VMware's most senior technical role).
+          </p>
+          <p>
+            Delivered major releases that grew Desktop from $10M to $100M.
+            Owned engineering for enterprise products,
+            <a href="https://www.vmware.com/products/view/">VMware View</a>
+            remote virtual desktops and
+            <a href="https://www.vmware.com/products/thinapp/">ThinApp</a>
+            Windows application virtualization;
+            personal virtualization with
+            <a href="https://www.vmware.com/products/workstation/">Workstation</a>
+            (Windows and Linux) and
+            <a href="https://www.vmware.com/products/fusion/">Fusion</a>
+            (Mac).
+            Technical sponsor of two strategic transactions: acquisition of RTO
+            Software for profile virtualization and OEM of Teradici's PCoIP
+            remote display protocol.
+          </p>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Akamai -->
+      <div class="job-entry">
+        <div class="job-header">
+          <span class="company">Akamai Technologies</span>
+          <span class="city">Cambridge, MA (1999&ndash;07) / San Mateo, CA (2007&ndash;08)</span>
+        </div>
+
+        <div class="job-title-row sub-role">
+          <span class="job">Senior Director, Service Performance</span>
+          <span>(2005&ndash;08)</span>
+        </div>
+        <div class="jobdesc">
+          <p>
+            Founded the Service Performance group in Networks &amp; Operations
+            for advanced ops and high-touch customer engagements.
+            Grew organization from six to 35 engineers and architects in US and India.
+          </p>
+          <p>
+            Improved service reliability by driving bulletproofing and scaling initiatives.
+            Managed Akamai's incident response process.
+            Defined and measured core platform quality metrics, presented quarterly to
+            CEO and Chief Scientist.
+            Owned high-touch customer escalations and events, including:
+            2006 Olympics, March Madness, Microsoft patch Tuesdays, Hulu's launch,
+            and Apple iPhone launch.
+            Designed a unique cache hierarchy setup for long-tail social networking content.
+          </p>
+        </div>
+
+        <div class="job-title-row sub-role">
+          <span class="job">Director and Senior Director, Engineering</span>
+          <span>(1999&ndash;05)</span>
+        </div>
+        <div class="jobdesc">
+          <p>
+            Engineering Manager of 20&ndash;50 engineers and managers.
+            Led technical hiring during company growth, then managed
+            transitions and motivated teams during staff reductions.
+            Mentor to other managers, senior engineers, and architects.
+            Established processes for development, QA, and release engineering.
+            Oversaw technical integration of two acquired companies.
+          </p>
+          <p>
+            Hands-on technical leader of Akamai's core technology.
+            Handled many urgent service incidents; one of five crisis managers
+            called in for the big problems.
+          </p>
+          <ul class="three-col">
+            <li>Communication infra.</li>
+            <li>Security systems</li>
+            <li>HTTP and DNS</li>
+            <li>Load balancing</li>
+            <li>Coherence protocols</li>
+            <li>Fault tolerance</li>
+            <li>Linux kernel</li>
+            <li>Operations tools</li>
+            <li>Performance</li>
+          </ul>
+        </div>
+
+        <div class="job-title-row sub-role">
+          <span class="job">Senior Software Engineer</span>
+          <span>(1999)</span>
+        </div>
+        <div class="jobdesc">
+          <p>
+            Lead engineer on HTTP content server. Scaled technology and
+            features for rapid pre-IPO growth.
+          </p>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- FarSight -->
+      <div class="job-entry">
+        <div class="job-header">
+          <span class="company">FarSight Financial Services</span>
+          <span class="city">Cambridge, MA</span>
+        </div>
+        <div class="job-title-row">
+          <span class="job">Senior Performance Engineer</span>
+          <span>(1998&ndash;99)</span>
+        </div>
+        <div class="jobdesc">
+          <p>
+            Enhanced performance of a website for retail on-line stock trading.
+            Profiled systems, rewrote critical code paths (C++), and optimized
+            database queries and schemas (Sybase).
+          </p>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Venturcom -->
+      <div class="job-entry">
+        <div class="job-header">
+          <span class="company">Venturcom</span>
+          <span class="city">Cambridge, MA</span>
+        </div>
+        <div class="job-title-row">
+          <span class="job">Principal Software Engineer</span>
+          <span>(1996&ndash;98)</span>
+        </div>
+        <div class="jobdesc">
+          <p>
+            Principal architect, engineer, and team lead of Component
+            Integrator, a tool for customizing and embedding Windows NT and CE.
+            Product bought by Microsoft, later released as the
+            <a href="https://msdn.microsoft.com/library/default.asp?url=/library/en-us/xpehelp/html/xeconaboutwindowsxpembeddedstudio.asp">Windows Embedded Studio</a>.
+            Venturcom eventually became Ardence, acquired by Citrix.
+          </p>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- McKinsey -->
+      <div class="job-entry">
+        <div class="job-header">
+          <span class="company">McKinsey &amp; Company, IT</span>
+          <span class="city">Cambridge, MA</span>
+        </div>
+        <div class="job-title-row">
+          <span class="job">Principal Software Engineer</span>
+          <span>(1993&ndash;96)</span>
+        </div>
+        <div class="jobdesc">
+          <p>
+            Led development of client/server human resource system for internal use.
+            Enhanced and optimized custom database replication system (Oracle).
+            Attended week-long training sessions on communication skills,
+            writing, and problem solving.
+          </p>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Veritas -->
+      <div class="job-entry">
+        <div class="job-header">
+          <span class="company">Veritas Software</span>
+          <span class="city">Santa Clara, CA</span>
+        </div>
+        <div class="job-title-row">
+          <span class="job">Software Engineer (Part-Time)</span>
+          <span>(1990&ndash;93)</span>
+        </div>
+        <div class="jobdesc">
+          <p>
+            Developed and tested Visual Administrator tool suite (C, Motif, Xt).
+          </p>
+        </div>
+      </div>
+
+    </div><!-- end section-content -->
+  </div><!-- end Work Experience -->
+
+  <hr>
+
+  <!-- ===== Activities ===== -->
+  <div class="resume-section">
+    <div class="section-label">Activities</div>
+    <div class="section-content">
       <ul>
-          <li> 2026-current and 2014-2018: <a href="http://www.peninsulaschool.org/">Peninsula School</a>
-               Board of Directors. Four years as Secretary and member of the Executive Committee.
-          </li>
-          <li> 2016-2021: <a href="http://bridgefoundry.org/advisory-board">Bridge Foundry</a>
-               Advisory Board member.
-          </li>
+        <li>2026&ndash;current and 2014&ndash;2018: <a href="https://www.peninsulaschool.org/">Peninsula School</a>
+          Board of Directors. Four years as Secretary and member of the Executive Committee.
+        </li>
+        <li>2016&ndash;2021: <a href="https://bridgefoundry.org/advisory-board">Bridge Foundry</a>
+          Advisory Board member.
+        </li>
       </ul>
+    </div>
+  </div>
 
-    </td>
-  </tr>
+  <hr>
 
-
-  <!-- ========================================================= -->
-
-  <tr>
-    <td></td>
-    <td colspan="2">
-      <hr>
-    </td>
-  </tr>
-
-  <tr>
-    <td class="section">Patents</td>
-    <td colspan="2">
+  <!-- ===== Patents ===== -->
+  <div class="resume-section">
+    <div class="section-label">Patents</div>
+    <div class="section-content">
       <ul>
-        <li> Content Delivery Network (CDN) Content Server Request Mechanism
+        <li>Content Delivery Network (CDN) Content Server Request Mechanism
           With Metadata Framework Support
           (<a href="https://www.google.com/patents/US7240100">US 7,240,100</a>
           and
-          <a href="http://www.google.com/patents/US8122102">US 8,122,102</a>)
-
-        <li> Internet content delivery service with third party cache
+          <a href="https://www.google.com/patents/US8122102">US 8,122,102</a>)
+        </li>
+        <li>Internet content delivery service with third party cache
           interface support
-          (<a href="http://www.google.com/patents/US7010578">US 7,010,578</a>)
-
-        <li> Method and System For Providing Content Providers With
+          (<a href="https://www.google.com/patents/US7010578">US 7,010,578</a>)
+        </li>
+        <li>Method and System For Providing Content Providers With
           Information About How Their Users Access the Internet
           (<a href="https://www.google.com/patents/WO2002017139A1">WO 2002/017139</a>)
-
-        <li> Enterprise Content Delivery Network Having a Central Controller
+        </li>
+        <li>Enterprise Content Delivery Network Having a Central Controller
           For Coordinating a Set Of Content Servers
-          (pending, <a href="http://www.google.com/patents/US20040073596">US 2004/0073596</a>)
+          (pending, <a href="https://www.google.com/patents/US20040073596">US 2004/0073596</a>)
+        </li>
       </ul>
+    </div>
+  </div>
 
-    </td>
-  </tr>
+  <hr>
 
+  <!-- ===== Education ===== -->
+  <div class="resume-section">
+    <div class="section-label">Education</div>
+    <div class="section-content">
+      <b>Stanford University, B.S. Computer Science, 1993</b>
+      <br>Research: "Verification of SCI Cache Coherence Protocol" under Prof. David Dill.
+    </div>
+  </div>
 
-  <!-- ========================================================= -->
+  <p class="version">Mar 2026</p>
 
-  <tr>
-    <td></td>
-    <td colspan="2">
-      <hr>
-    </td>
-  </tr>
-
-  <tr>
-    <td class="section">Education</td>
-    <td colspan="2">
-      <b class="job">Stanford University, B.S. Computer Science, 1993</b>
-      <br>Research: "Verification of SCI Cache Coherence Protocol" under
-      Prof. David Dill.
-    </td>
-  </tr>
-
-</table>
-
-<p class="version">Mar 2026</p>
-
+</div><!-- end .resume -->
 </body>
 </html>

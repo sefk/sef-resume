@@ -1,0 +1,26 @@
+#!/bin/sh
+# Regenerate PDFs from HTML before commit.
+
+CHANGED_HTML=$(git diff --cached --name-only | grep '\.html$')
+
+if [ -z "$CHANGED_HTML" ]; then
+  exit 0
+fi
+
+if echo "$CHANGED_HTML" | grep -q "sef-kloninger-resume\.html"; then
+  echo "pre-commit: regenerating sef-kloninger-resume.pdf..."
+  wkhtmltopdf --enable-local-file-access --print-media-type --page-size Letter --disable-smart-shrinking \
+    sef-kloninger-resume.html sef-kloninger-resume.pdf
+  git add sef-kloninger-resume.pdf
+fi
+
+if echo "$CHANGED_HTML" | grep -q "sef-kloninger-resume-full\.html"; then
+  if [ -z "$RESUME_ADDRESS" ]; then
+    echo "pre-commit: WARNING: RESUME_ADDRESS is not set; skipping sef-kloninger-resume-full.pdf" >&2
+  else
+    echo "pre-commit: regenerating sef-kloninger-resume-full.pdf..."
+    wkhtmltopdf --enable-local-file-access --print-media-type --page-size Letter --disable-smart-shrinking \
+      sef-kloninger-resume-full.html sef-kloninger-resume-full.pdf
+    git add sef-kloninger-resume-full.pdf
+  fi
+fi

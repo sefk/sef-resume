@@ -6,9 +6,11 @@ HTML-TARGETS = sef-kloninger-resume-full.html
 
 all: $(HTML-TARGETS) $(PDF-TARGETS)
 	
+CHROME = /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
 %.pdf: %.html
-#	pandoc -t latex ./$< -o ./$@
-	wkhtmltopdf --enable-local-file-access --print-media-type --page-size Letter --disable-smart-shrinking ./$< ./$@
+	"$(CHROME)" --headless --disable-gpu --no-pdf-header-footer \
+	  --print-to-pdf=$(abspath $@) "file://$(abspath $<)"
 
 %-full.html: %.html $(CSS)
 ifeq (z$(RESUME_ADDRESS),z)

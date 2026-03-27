@@ -7,10 +7,18 @@ if [ -z "$CHANGED_HTML" ]; then
   exit 0
 fi
 
+CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+REPO_ROOT=$(git rev-parse --show-toplevel)
+
+html_to_pdf() {
+  local html="$1" pdf="$2"
+  "$CHROME" --headless --disable-gpu --no-pdf-header-footer \
+    --print-to-pdf="$pdf" "file://$html" 2>/dev/null
+}
+
 if echo "$CHANGED_HTML" | grep -q "sef-kloninger-resume\.html"; then
   echo "pre-commit: regenerating sef-kloninger-resume.pdf..."
-  wkhtmltopdf --enable-local-file-access --print-media-type --page-size Letter --disable-smart-shrinking \
-    sef-kloninger-resume.html sef-kloninger-resume.pdf
+  html_to_pdf "$REPO_ROOT/sef-kloninger-resume.html" "$REPO_ROOT/sef-kloninger-resume.pdf"
   git add sef-kloninger-resume.pdf
 fi
 
@@ -19,8 +27,7 @@ if echo "$CHANGED_HTML" | grep -q "sef-kloninger-resume-full\.html"; then
     echo "pre-commit: WARNING: RESUME_ADDRESS is not set; skipping sef-kloninger-resume-full.pdf" >&2
   else
     echo "pre-commit: regenerating sef-kloninger-resume-full.pdf..."
-    wkhtmltopdf --enable-local-file-access --print-media-type --page-size Letter --disable-smart-shrinking \
-      sef-kloninger-resume-full.html sef-kloninger-resume-full.pdf
+    html_to_pdf "$REPO_ROOT/sef-kloninger-resume-full.html" "$REPO_ROOT/sef-kloninger-resume-full.pdf"
     git add sef-kloninger-resume-full.pdf
   fi
 fi

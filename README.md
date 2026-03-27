@@ -16,7 +16,8 @@ Steps to use this repo:
     # imagemagick is used for thumbnails
     brew install imagemagick
     brew install tidy-html5
-    brew install --cask wkhtmltopdf
+    # Google Chrome is used for PDF generation (must be installed at the default path)
+    brew install --cask google-chrome
 
     # enable the pre-commit hook
     git config core.hooksPath hooks

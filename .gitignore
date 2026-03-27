@@ -1,6 +1,7 @@
 *-resume-full.*
 *.swp
 .DS_Store
+.claude
 
 # per https://devnet.jetbrains.com/docs/DOC-1186
 .idea/workspace.xml

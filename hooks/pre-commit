@@ -20,14 +20,16 @@ if echo "$CHANGED_HTML" | grep -q "sef-kloninger-resume\.html"; then
   echo "pre-commit: regenerating sef-kloninger-resume.pdf..."
   html_to_pdf "$REPO_ROOT/sef-kloninger-resume.html" "$REPO_ROOT/sef-kloninger-resume.pdf"
   git add sef-kloninger-resume.pdf
-fi
 
-if echo "$CHANGED_HTML" | grep -q "sef-kloninger-resume-full\.html"; then
+  # The full resume is derived from the short one (gitignored, local only).
+  # Regenerate it and its PDF so they stay in sync, but don't stage them.
   if [ -z "$RESUME_ADDRESS" ]; then
-    echo "pre-commit: WARNING: RESUME_ADDRESS is not set; skipping sef-kloninger-resume-full.pdf" >&2
+    echo "pre-commit: WARNING: RESUME_ADDRESS is not set; skipping sef-kloninger-resume-full.{html,pdf}" >&2
   else
-    echo "pre-commit: regenerating sef-kloninger-resume-full.pdf..."
+    echo "pre-commit: regenerating sef-kloninger-resume-full.html and .pdf (local only)..."
+    sed "s|<!-- addr -->|$RESUME_ADDRESS|g" \
+      "$REPO_ROOT/sef-kloninger-resume.html" \
+      > "$REPO_ROOT/sef-kloninger-resume-full.html"
     html_to_pdf "$REPO_ROOT/sef-kloninger-resume-full.html" "$REPO_ROOT/sef-kloninger-resume-full.pdf"
-    git add sef-kloninger-resume-full.pdf
   fi
 fi

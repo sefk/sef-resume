@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Resume of Sef Kloninger, a semi-retired engineering manager with a thirty-year career in distributed systems and data processing at Google, VMware, Akamai, Ning, and Stanford.">
   <title>Sef Kloninger Resume</title>
 
   <style>
@@ -100,7 +101,13 @@
 
     a:link, a:active, a:visited {
       color: blue;
-      text-decoration: none;
+      text-decoration: underline;
+    }
+
+    /* Enlarge header contact links to meet 24px touch-target minimum */
+    .contact a {
+      display: inline-block;
+      line-height: 1.5;
     }
 
     p.version {
@@ -133,7 +140,7 @@
 
 </head>
 <body>
-<div class="resume">
+<main class="resume">
 
   <!-- ===== Header ===== -->
   <div class="resume-header">
@@ -185,21 +192,22 @@
           <p>Three active projects, using AI heavily throughout</p>
           <ul>
             <li>
-              <b>Volunteer, <a href="https://biglocalnews.org/">Big Local News</a></b>,
-              a project at Stanford building data tools for journalists.
-              Re-launched <a href="https://datatalk.genie.stanford.edu/">DataTalk V2</a>, a text
+              <a href="https://biglocalnews.org/">Big Local News</a></b>, Volunteer engineer.
+              BLN is aa project at Stanford building data tools for journalists.
+              I re-launched <a href="https://datatalk.genie.stanford.edu/">DataTalk V2</a>, a text
               interface to US federal election data. Presented at
               <a href="https://2026-ire-conference.sessionize.com/session/1234294">IRE 2026</a>.
             </li>
             <li>
-              <b>Developer, <a href="https://leafletter.app">Leafletter</a></b>, a small app for
-              tracking leaflet distribution
+              <a href="https://leafletter.app">Leafletter</a></b>. I built a small app for
+              tracking leaflet distribution for progressive campaigns.
               (<a href="https://sef.kloninger.com/posts/leafletter/">blog post</a>).
             </li>
             <li>
-              <b>Volunteer, <a href="https://www.datarescueproject.org/">Data Rescue Project</a></b>,
-              saving public-interest datasets from authoritarian takedown and corruption.
-              Built an AI driven orchestration system to make recovery faster and cheaper
+              <a href="https://www.datarescueproject.org/">Data Rescue Project</a>, Volunteer
+              engineer. DRP saves at-risk public-interest datasets from authoritarian
+              takedown and corruption.
+              I built an AI driven orchestration system to make recovery faster and easier
               (<a href="https://sef.kloninger.com/posts/data-preservation/">blog post</a>).
             </li>
           </ul>
@@ -633,6 +641,6 @@
 
   <p class="version">Mar 2026</p>
 
-</div><!-- end .resume -->
+</main><!-- end .resume -->
 </body>
 </html>
